@@ -2,10 +2,10 @@ const axios = require('axios')
 
 class DiscordVCStatus {
     /**
-     * @param {String} botToken The Bot's token to make the fetch to the Discord API
+     * @param {Client} botClient The Client of the bot
      */
-    constructor(botToken) {
-        this.botToken = botToken;
+    constructor(botClient) {
+        this.botClient = botClient;
     }
 
     /**
@@ -15,10 +15,10 @@ class DiscordVCStatus {
      */
     async setVoiceStatus(voiceChannelId, status) {
         try {
-            if (status.length < 1 || !status) throw Error("The status should be had a text...")
+            if (status.length < 1 || !status) status = null
 
             const request = await axios.put(`https://discord.com/api/v10/channels/${voiceChannelId}/voice-status`,
-                { status: `${status}` }, { headers: { Authorization: `Bot ${this.botToken}` } }
+                { status: `${status}` }, { headers: { Authorization: `Bot ${this.botClient.token}` } }
             )
         } catch (error) {
             throw Error(`An error just ocurred: ${error}`)

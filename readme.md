@@ -13,12 +13,18 @@ npm i discord-vc-status
 ```js
 // in your index.js or whatever you declared client
 const { DiscordVCStatus } = require("discord-vc-status")
+const { Client } = require("discord.js")
 
-client.vcStatus = new DiscordVCStatus("<your-bot-token-here>");
+// Define your client..
+const client = new Client({ Intents: [INTENTS_HERE] })
+
+// Declare the library as a client's attribute
+client.vcStatus = new DiscordVCStatus(client);
 
 // in your command if you want
-
+// Put any status message.
 let status = "I love the mices 🐁"
 
+// Invoke it.
 await client.vcStatus.setVoiceStatus("<voice-channel-id-here>", status)
 ```
