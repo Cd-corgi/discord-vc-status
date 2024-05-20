@@ -1,0 +1,27 @@
+{
+  "name": "discord-vc-status",
+  "version": "1.0.0",
+  "description": "A Discord API shortcut to put Custom VC Status!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cd-corgi/discord-vc-status.git"
+  },
+  "keywords": [
+    "discord.js",
+    "status",
+    "shortcut"
+  ],
+  "author": "cd-corgi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cd-corgi/discord-vc-status/issues"
+  },
+  "homepage": "https://github.com/Cd-corgi/discord-vc-status#readme",
+  "dependencies": {
+    "axios": "^1.7.0"
+  }
+}
