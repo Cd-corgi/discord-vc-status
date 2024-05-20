@@ -18,7 +18,7 @@ class DiscordVCStatus {
             if (status.length < 1 || !status) status = null
 
             const request = await axios.put(`https://discord.com/api/v10/channels/${voiceChannelId}/voice-status`,
-                { status: `${status}` }, { headers: { Authorization: `Bot ${this.botClient.token}` } }
+                { status }, { headers: { Authorization: `Bot ${this.botClient.token}` } }
             )
         } catch (error) {
             throw Error(`An error just ocurred: ${error}`)
