@@ -15,9 +15,7 @@ class DiscordVCStatus {
      */
     async setVoiceStatus(voiceChannelId, status) {
         try {
-            if (status.length < 1 || !status) status = null
-
-            const request = await axios.put(`https://discord.com/api/v10/channels/${voiceChannelId}/voice-status`,
+            const request = axios.put(`https://discord.com/api/v10/channels/${voiceChannelId}/voice-status`,
                 { status: status.length > 0 ? `${status}` : null }, { headers: { Authorization: `Bot ${this.botClient.token}` } }
             )
         } catch (error) {
